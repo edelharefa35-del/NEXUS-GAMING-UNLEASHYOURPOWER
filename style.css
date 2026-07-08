@@ -1,0 +1,351 @@
+        /* --- RESET & BASIC STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER NAVIGATION --- */
+        header {
+            background-color: #000000;
+            border-bottom: 2px solid #ff003c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #ff003c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            color: #ff003c;
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            background: linear-gradient(180deg, rgba(14,2,6,0.8) 0%, rgba(0,0,0,0.95) 100%), url('images/hero-bg.jpg') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 0, 60, 0.6);
+        }
+        .hero h1 span {
+            color: #ff003c;
+        }
+        .hero p {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        .btn-explore {
+            background: linear-gradient(45deg, #ff003c, #b3002a);
+            color: #ffffff;
+            border: none;
+            padding: 12px 35px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transform: skewX(-15deg);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 60, 0.4);
+        }
+        .btn-explore span {
+            display: inline-block;
+            transform: skewX(15deg);
+        }
+        .btn-explore:hover {
+            background: linear-gradient(45deg, #ff3366, #ff003c);
+            box-shadow: 0 4px 25px rgba(255, 0, 60, 0.8);
+        }
+
+        /* --- FILTER BAR KATEGORI --- */
+        .filter-container {
+            background-color: #111111;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-bottom: 1px solid #222222;
+        }
+        .filter-btn {
+            background-color: transparent;
+            color: #aaaaaa;
+            border: 1px solid #333333;
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transform: skewX(-15deg);
+            transition: all 0.3s ease;
+        }
+        .filter-btn span {
+            display: inline-block;
+            transform: skewX(15deg);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #ff003c;
+            color: #ffffff;
+            border-color: #ff003c;
+        }
+
+        /* --- MAIN PRODUCTS AREA --- */
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #ff003c;
+            margin: 10px auto 0 auto;
+        }
+
+        /* GRID LAYOUT SESUAI SCREENSHOT */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background-color: #0f0f0f;
+            border: 1px solid #1a1a1a;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            border-color: #ff003c;
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.2);
+        }
+        
+        /* Gambar & Badge */
+        .image-container {
+            background-color: #ffffff;
+            padding: 20px;
+            height: 240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .image-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .badge-ribbon {
+            position: absolute;
+            top: 10px;
+            right: -5px;
+            background-color: #ff003c;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 15px;
+            text-transform: uppercase;
+            transform: skewX(-15deg);
+            box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Konten Detail */
+        .product-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .prod-category {
+            color: #ff003c;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .product-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        .specs {
+            color: #888888;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            height: 55px;
+            overflow: hidden;
+        }
+        .stock-status {
+            color: #00ff66;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        /* Input Quantity & Harga Row */
+        .qty-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+        .qty-input {
+            background-color: #1a1a1a;
+            border: 1px solid #333333;
+            color: #ffffff;
+            width: 50px;
+            text-align: center;
+            padding: 3px;
+            font-weight: 700;
+        }
+        .footer-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 15px;
+        }
+        .price {
+            color: #ff003c;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+        }
+        .btn-buy {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ff003c;
+            padding: 6px 18px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-buy:hover {
+            background-color: #ff003c;
+            box-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
+        }
+
+        /* --- FEATURES INFOBAR --- */
+        .features-bar {
+            background-color: #0a0a0a;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .feature-box {
+            background-color: #0f0f0f;
+            border: 1px solid #1a1a1a;
+            padding: 25px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .feature-box:hover {
+            border-color: #ff003c;
+        }
+        .feature-box h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .feature-box p {
+            font-size: 12px;
+            color: #777777;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #000000;
+            border-top: 1px solid #1a1a1a;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #555555;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
+        }
+
+        /* Memaksa keranjang samping tetap tersembunyi secara default */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px; /* Sembunyi di kanan layar */
+            width: 350px;
+            height: 100vh;
+            background: #0f0f0f;
+            border-left: 1px solid #1a1a1a;
+            z-index: 2000;
+            transition: right 0.3s ease;
+            padding: 20px;
+        }
+        /* Hanya muncul ketika ikon keranjang diklik (ada class open) */
+        .cart-sidebar.open {
+            right: 0;
+        }
